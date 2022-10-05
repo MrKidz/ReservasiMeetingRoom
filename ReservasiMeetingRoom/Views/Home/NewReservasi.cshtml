@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ReservasiMeetingRoom.Models.tblM_Ruangan>;
+@{
+    ViewBag.Title = "New Reservasi Meeting Room";
+}
+<h2>@ViewBag.Title.</h2>
+
+<form>
+    <div class="row">
+        <div class="col-lg-2">
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Ruangan</label>
+                <select class="form-control" name="ruangan" id="exampleFormControlSelect1">
+                    @foreach (var ruangan in Model)
+                    {
+                        <option value="@Html.DisplayFor(modelRuangan => ruangan.NamaRuangan)">@Html.DisplayFor(modelRuangan => ruangan.NamaRuangan)</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" class="form-control" id="subject">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+            <div class="form-group">
+                <label for="subject">Tanggal</label>
+                <input type="date" class="form-control" id="subject">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="form-group">
+                <label for="subject">Jam Mulai</label>
+                <input type="time" class="form-control" id="subject">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="form-group">
+                <label for="subject">Jam Selesai</label>
+                <input type="time" class="form-control" id="subject">
+            </div>
+        </div>
+    </div>
+    <button type="submit">Save New Reservasi Meeting Room</button>
+</form>
